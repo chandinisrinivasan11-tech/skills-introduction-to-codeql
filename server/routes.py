@@ -11,9 +11,9 @@ def index():
     author = request.args.get('author')
     read = bool(request.args.get('read'))
 
-    if name:
+    if name:https://github.com/chandinisrinivasan11-tech/skills-introduction-to-codeql/blob/main/server/routes.py
         cursor.execute(
-            "SELECT * FROM books WHERE name LIKE '%" + name + "%'"
+            "SELECT * FROM books WHERE name LIKE %s", name
         )
         books = [Book(*row) for row in cursor]
 
